@@ -1,3 +1,4 @@
+require("dotenv").config();
 const config = require("./config.json");
 const utils = require("./modules/utils");
 
@@ -8,7 +9,7 @@ module.exports.listen = function (event) {
         entry.messaging.forEach(async (event) => {
           event.type = await utils.getEventType(event);
 
-          global.PAGE_ACCESS_TOKEN = config.PAGE_ACCESS_TOKEN;
+          global.PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN || config.PAGE_ACCESS_TOKEN;
 
           // Blocks responding to the bot's own messages
           if (config.selfListen && event?.message?.is_echo) return;
