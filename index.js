@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const web = require("./website/web.js");
 const webhook = require("./webhook.js");
 const parser = require("body-parser");
@@ -7,6 +9,7 @@ const app = express();
 
 app.use(parser.json());
 app.use(express.static("website"));
+
 app.get("/config.json", (req, res) => {
   res.sendFile(path.join(__dirname, "config.json"));
 });
