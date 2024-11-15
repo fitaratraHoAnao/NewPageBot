@@ -1,6 +1,6 @@
 {
-  "PAGE_ACCESS_TOKEN": "",
-  "VERIFY_TOKEN": "WEBHOOK",
+  "PAGE_ACCESS_TOKEN": "${PAGE_ACCESS_TOKEN}",
+  "VERIFY_TOKEN": "${VERIFY_TOKEN}",
   "ADMINS": [
     ""
   ],
